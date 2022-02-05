@@ -1,11 +1,12 @@
 import React from 'react';
+import CartWidget from './CartWidget';
 
 function Navbar() {
-    return <div className="fondoPagina">
+    return (
 
         <nav className="contenedorNav">
             <div>
-                <div class="nombreTienda">Mimas</div>
+                <div className="nombreTienda">Mimas</div>
             </div>
 
             <ul className="categoriasNav">
@@ -24,11 +25,15 @@ function Navbar() {
                 <li className="itemNav">
                     <a className="navLink">Contacto</a>
                 </li>
-
             </ul>
 
+            <div className="carrito">
+                <CartWidget />
+                0</div>
         </nav>
-    </div>;
+
+    )
+        ;
 }
 
 export default Navbar;
