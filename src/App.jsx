@@ -9,7 +9,7 @@ function App() {
         <Navbar />
       </div>
       <div className="seccionTexto">
-        <ItemListContainer /*textoDesafio={"Desafio entregable 'crea tu landing'"}*/ className={"parrafo"} />
+        <ItemListContainer /*textoDesafio={"Desafio entregable 'crea tu landing'"}*/ /*className={"parrafo"}*/ />
       </div>
     </main>
   );

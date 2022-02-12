@@ -1,13 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
+import ItemCount from './ItemCount';
+import axios from "axios";
 
-const Prueba = ({ nombre }) => {
-    const [contador, setContador] = useState(1);
-
-
-    return <>
-        <h1>{contador}</h1>
-        <button onClick={() => setContador(contador + 1)}>sumar</button>;
-        <button onClick={() => setContador(contador - 1)}>restar</button>;
-    </>
+function ItemListContainer({ textoDesafio, className }) {
+    return (<div className={className}>
+        {textoDesafio}
+        <div>
+            <ItemCount inicial={1} />
+        </div>
+    </ div>
+    )
 };
-export default Prueba;
+
+
+// const ItemListContainer = ({ }) => {
+//     const [info, setInfo] = useState(null);
+//     const getData = async () => {
+//         try {
+//             const response = await axios.get("http://hp-api.herokuapp.com/api/characters"
+//             );
+//             console.log(response.data)
+//         } catch (error) {
+//             console.log(error);
+
+//         }
+//     };
+
+
+
+//     useEffect(() => { getData() }, []);
+
+//     return <h1>bammm</h1>
+
+// };
+export default ItemListContainer;
