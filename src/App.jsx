@@ -1,6 +1,8 @@
 import './App.css';
 import Navbar from "./Components/Navbar"
 import ItemListContainer from "./Components/ItemListContainer"
+import ItemDetailContainer from './Components/ItemDetailContainer';
+
 
 function App() {
   return (
@@ -9,8 +11,11 @@ function App() {
         <Navbar />
       </div>
       <div className="seccionTexto">
-        <ItemListContainer /*textoDesafio={"Desafio entregable 'crea tu landing'"}*/ /*className={"parrafo"}*/ />
+        <ItemListContainer /*textoDesafio={"Desafio entregable 'crea tu landing'"} className={"parrafo"}*/ />
       </div>
+      {/* <div>
+        <ItemDetailContainer />
+      </div> */}
     </main>
   );
 }

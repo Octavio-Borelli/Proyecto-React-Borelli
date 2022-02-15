@@ -1,15 +1,20 @@
 import React from 'react'
 
 const Item = ({ item }) => {
+
     return (
         <div>
-            <h3>{item.nombre}</h3>
-            <h3>{item.id}</h3>
-            <div>{item.imgUrl}</div>
-            <h2>{item.precio}</h2>
-            <button>Ver mas detalles</button>
+            <div className="contenedoresItem">
+                <img src={item.img} className="imagenes" />
+                <div className="Item">
+                    <h4>{item.nombre}</h4>
+                    <h4>{item.precio}</h4>
+                    <button className="btnItem">Detalles</button>
+                </div>
+            </div>
         </div>
     )
-}
+
+};
 
 export default Item
