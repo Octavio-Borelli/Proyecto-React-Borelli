@@ -68,11 +68,12 @@
   width: 100vw;
   justify-content: flex-start;
   align-items: center;
+  background-color: grey;
 
 }
 
 
-.parrafo {
+/* .parrafo {
   display: flex;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white;
@@ -85,7 +86,7 @@
   padding: 1rem;
   border-radius: 0.5rem;
 
-}
+} */
 
 .seccionNavBar {
   display: flex;
@@ -94,15 +95,27 @@
   justify-content: center;
 }
 
-.seccionTexto {
+/* .seccionTexto {
   display: flex;
   flex-direction: row;
   height: 80%;
   width: 100%;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+} */
+
+.seccionCincoItems {
+  display: flex;
+  flex-direction: row;
+  height: 80%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
 }
 
+
+/* 
 .restar {
   height: 2rem;
   width: 2rem;
@@ -138,35 +151,121 @@
   flex-direction: column;
   align-items: center;
 
-}
+} */
 
-.contenedoresItem {
+.contenedoresIndividualesItem {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 1rem;
   background-color: rgb(54, 54, 54);
-  height: 12rem;
+  height: 13rem;
   Width: 12rem;
   border-radius: 1rem;
   color: white;
 }
 
-.item {
+/* .item {
   display: flex;
   justify-content: center;
   height: 10rem;
   width: 12rem;
-}
+} */
 
 .imagenes {
-  height: 5rem;
+  height: 6.5rem;
+  border-radius: 1rem 0rem 1rem 0rem;
   width: 100%;
+}
+
+.nombreItem {
+  text-align: center;
+  margin: 0.5rem;
+
+}
+
+.precioItem {
+  text-align: center;
+  margin: 0.5rem;
 }
 
 .btnItem {
   height: auto;
   width: 5rem;
   border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+
+.contenedorObjeto {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 90%;
+  padding: 1rem;
+  height: 20rem;
+  width: 40rem;
+  background-color: beige;
+  border-radius: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contenedorNombreObjeto {
+  width: 100%
+}
+
+.nombreObjeto {
+  font-size: 1.5rem;
+  margin-left: 10rem;
+  height: 2rem;
+  width: 22rem;
+}
+
+.imagenObjeto {
+  height: 13rem;
+  width: 18rem;
+}
+
+.precioObjeto {
+  font-size: 2rem;
+  height: 3rem;
+  width: 8rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+
+}
+
+.descripcionObjeto {
+  font-size: 1rem;
+  height: 10rem;
+  width: 15rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+
+}
+
+
+.botonObjeto {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1rem;
+  height: 2rem;
+  width: 10rem;
+  margin: 0.5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.izquierda {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.derecha {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

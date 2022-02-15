@@ -10,10 +10,10 @@ function App() {
       <div className="seccionNavBar">
         <Navbar />
       </div>
-      <div className="seccionTexto">
+      <div className="seccionCincoItems" >
         <ItemListContainer /*textoDesafio={"Desafio entregable 'crea tu landing'"} className={"parrafo"}*/ />
       </div>
-      {/* <div>
+      {/* <div className="seccionTexto">
         <ItemDetailContainer />
       </div> */}
     </main>

@@ -5,10 +5,11 @@ const ItemDetailContainer = () => {
 
     const objetoSillon =
     {
-        nombre: "sillon",
+        nombre: "Sillon de tres cuerpos de 210 cm",
         id: 1,
-        precio: 10000,
-        url: "https://www.oromanta.com/img_productos/10261401_SILLON-BRISTOL.jpg"
+        precio: "$40000",
+        img: "https://www.oromanta.com/img_productos/10261401_SILLON-BRISTOL.jpg",
+        descripcion: "Sillon de tres cuerpos, con una única placa de asiento de espuma de alta densidad, 5 almohadones de 50x50cm rellenos de vellón siliconado y patas de madera natural. Se puede tapizar en lino, pana o rafia."
     };
 
     const [objeto, setObjeto] = useState([]);
@@ -25,15 +26,14 @@ const ItemDetailContainer = () => {
 
         promesaNueva.then((resultado) => {
             setObjeto(resultado);
-            console.log(resultado);
+
         }).catch((err) => { console.log(err) });;
 
     }, []);
 
     return (
         <div>
-            <h1>Detalle</h1>
-            <ItemDetail setObjeto={setObjeto} />
+            <ItemDetail objetoSillon={objeto} />
         </div>);
 };
 
