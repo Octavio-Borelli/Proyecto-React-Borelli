@@ -30,7 +30,7 @@ function ItemListContainer({ }) {
 
         promesa.then((resultado) => {
             setItemMueble(resultado);
-            console.log([resultado])
+
         }).catch((err) => { console.log(err) });
 
     }, []);
