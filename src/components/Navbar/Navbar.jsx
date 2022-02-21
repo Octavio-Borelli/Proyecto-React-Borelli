@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function Navbar() {
+function Navbar(filtrar) {
     return (
 
         <nav className="contenedorNav">

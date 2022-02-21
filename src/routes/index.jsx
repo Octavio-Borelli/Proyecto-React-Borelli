@@ -9,7 +9,7 @@ import Nosotros from "../components/Nosotros/Nosotros";
 
 
 
-const Rutas = () => {
+const Rutas = (muebles) => {
     return (
         <BrowserRouter>
             <Navbar className="seccionNavBar" />

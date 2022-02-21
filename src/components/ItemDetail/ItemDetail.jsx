@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 const ItemDetail = ({ objeto }) => {
     return (
 
-        <div className="contenedorObjeto">
+        <div className="contenedorObjetoDetalle">
             <div className="contenedorNombreObjeto">
                 <h4 className="nombreObjeto">{objeto.nombre}</h4>
             </div>
@@ -15,7 +15,7 @@ const ItemDetail = ({ objeto }) => {
                 <h4 className="precioObjeto">{objeto.precio}</h4>
                 <h4 className="descripcionObjeto">{objeto.descripcion}</h4>
             </div>
-            <div>
+            <div className="contadorContenedor">
                 <ItemCount inicial={1} stock={10} />
             </div>
         </div>

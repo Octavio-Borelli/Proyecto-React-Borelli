@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Nosotros = () => {
     return (
 
-        <p>Nuestros diseños destacan por la pureza y la síntesis en sus líneas.
+        <p className="parrafo">Nuestros diseños destacan por la pureza y la síntesis en sus líneas.
             En su concepción, la austeridad está presente desde las ideas hasta
             la producción de los proyectos.
 

@@ -3,11 +3,8 @@ import React from 'react'
 const Checkout = () => {
     return (
 
-        <div className="contenedorObjeto">
-
-
+        <div className="contenedorObjetoCheckout">
             <button className="botonObjeto">Finalizar compra</button>
-
         </div>
     )
 }

@@ -26,12 +26,13 @@ const ItemCount = ({ inicial, stock, onAdd }) => {
 
     return (
         <div className='contador'>
-            <h3>Cantidad</h3>
+            {/* <h3>Cantidad</h3> */}
+
+
+            <button className="restar" onClick={() => restar()}>-</button>
             <h1>{contador}</h1>
-            <div>
-                <button className="restar" onClick={() => restar()}>-</button>
-                <button className="restar" onClick={() => sumar()}>+</button>
-            </div>
+            <button className="restar" onClick={() => sumar()}>+</button>
+
             <Link className="agregar" to={"/cart/checkout"} onClick={() => onAdd()}>Agregar al carrito</Link>
 
 

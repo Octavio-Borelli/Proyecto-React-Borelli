@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router-dom';
+
 
 function ItemListContainer() {
 
@@ -10,15 +12,14 @@ function ItemListContainer() {
 
     ];
 
-
     const [itemsMueble, setItemsMueble] = useState();
+
 
     useEffect(() => {
 
         const promesa = new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(muebles
-                )
+                resolve(muebles)
 
             }, 2000);
         });
@@ -32,10 +33,14 @@ function ItemListContainer() {
     }, []);
 
     return (
+
         <>
             <ItemList muebles={itemsMueble} />
         </>
     );
+
+
+
 };
 
 export default ItemListContainer

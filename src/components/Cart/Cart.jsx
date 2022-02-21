@@ -8,12 +8,9 @@ import Checkout from '../Checkout/Checkout'
 const Cart = () => {
     return (
         <>
-            <div>
-                <Link to={"/cart/checkout"}>
-                    <CartWidget />0
-                </Link>
-            </div>
-
+            <Link className="número" to={"/cart/checkout"}>
+                <CartWidget />0
+            </Link>
         </>
     )
 }
