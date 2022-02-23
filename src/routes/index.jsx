@@ -18,13 +18,12 @@ const Rutas = (muebles) => {
                 <Route path="/category/:id" element={<div className="seccionCincoItems"><ItemListContainer /></div>} />
                 <Route path="/category/:categoryId" element={<ItemListContainer />} />
                 <Route path="/item/:id" element={<ItemDetailContainer className="seccionDetalleItem" />} />
+                <Route path="/cart" element={<Cart />} />
                 <Route path="/cart/checkout" element={<Checkout />} />
                 <Route path="/nosotros" element={<Nosotros />} />
                 <Route path="/contacto" element={<Contacto />} />
                 <Route path="*" element={<div>404</div>} />
-
             </Routes>
-
         </BrowserRouter>
     )
 }

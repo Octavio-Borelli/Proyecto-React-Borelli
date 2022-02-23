@@ -59,6 +59,7 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+
 .carrito {
   display: flex;
   flex-direction: row;
@@ -68,20 +69,11 @@
   border-radius: 1rem;
   justify-content: center;
   align-items: center;
-  border: solid 0.15rem rgb(0, 0, 0);
   text-align: center;
-}
-
-.número {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
+  gap: 0.5rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: rgb(0, 0, 0);
-  height: 1.5rem;
-  width: 3rem;
-  gap: 0.5rem;
 }
 
 
@@ -93,7 +85,6 @@
   justify-content: flex-start;
   align-items: center;
   background-color: rgb(167, 167, 167);
-
 }
 
 
@@ -110,8 +101,6 @@
   padding: 2rem;
   margin-top: 5rem;
   border-radius: 1rem 0 1rem 0;
-
-
 }
 
 .seccionNavBar {
@@ -137,9 +126,11 @@
   width: 2rem;
   border-radius: 1rem;
   background-color: grey;
+  color: white;
   margin: 0.5rem;
-  border: solid rgb(0, 0, 0) 0.15rem;
   cursor: pointer;
+  border: none;
+  font-size: large;
 }
 
 .restar:hover {
@@ -147,25 +138,50 @@
 }
 
 
-.agregar {
+.comprar {
   height: 3rem;
   width: 7rem;
   border-radius: 1rem;
   text-decoration: none;
   text-align: center;
-  color: black;
+  color: white;
   background-color: grey;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border: solid rgb(0, 0, 0) 0.15rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+
+}
+
+.comprar:hover {
+  background-color: rgb(201, 201, 201);
+}
+
+
+.finalizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 3rem;
+  width: 14rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background-color: grey;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
   cursor: pointer;
 
 }
 
-.agregar:hover {
+.finalizar:hover {
   background-color: rgb(201, 201, 201);
 }
 
 .contadorContenedor {
+  display: grid;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 3;
@@ -181,7 +197,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 50%;
+  width: 70%;
   margin: auto;
   gap: 1rem;
 }
@@ -323,7 +339,6 @@
   justify-content: center;
 }
 
-
 .contenedorObjetoDetalle {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -337,7 +352,6 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
 .contenedorObjetoCheckout {
   display: flex;
   justify-content: center;
@@ -350,7 +364,6 @@
   border-radius: 1rem 0 1rem 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
 
 .fondoFormulario {
   display: grid;

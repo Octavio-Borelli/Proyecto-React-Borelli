@@ -4,7 +4,7 @@ const Checkout = () => {
     return (
 
         <div className="contenedorObjetoCheckout">
-            <button className="botonObjeto">Finalizar compra</button>
+            <h1>Gracias por su compra</h1>
         </div>
     )
 }
