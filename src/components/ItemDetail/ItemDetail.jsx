@@ -1,7 +1,15 @@
-import React from 'react'
+import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ objeto }) => {
+
+    // function onAdd() {
+    // };
+
+    // function handleClick() {
+    //     setOcultar(false);
+    // }
+
     return (
 
         <div className="contenedorObjetoDetalle">
@@ -12,14 +20,22 @@ const ItemDetail = ({ objeto }) => {
                 <img src={objeto.img} className="imagenObjeto" alt="" />
             </div>
             <div className="derecha">
+
+                <h4 className="idObjeto">{objeto.id}</h4>
                 <h4 className="precioObjeto">{objeto.precio}</h4>
+                <h4 className="stockObjeto">{objeto.stock}</h4>
                 <h4 className="descripcionObjeto">{objeto.descripcion}</h4>
             </div>
             <div className="contadorContenedor">
-                <ItemCount inicial={1} stock={10} />
+                <ItemCount objeto={objeto} inicial={1} stock={objeto.stock} />
+                {/* <ItemCount inicial={1} stock={objeto.stock} onAdd={onAdd} handleClick={handleClick} /> */}
             </div>
         </div>
     )
 };
 
 export default ItemDetail
+
+
+
+

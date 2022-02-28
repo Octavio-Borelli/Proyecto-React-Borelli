@@ -6,7 +6,7 @@ import Checkout from '../Checkout/Checkout';
 
 
 
-function Navbar(filtrar) {
+function Navbar() {
     return (
 
         <nav className="contenedorNav">
@@ -32,11 +32,9 @@ function Navbar(filtrar) {
                     <Link className="navLink" to={"/contacto"}>Contacto</Link>
                 </li>
             </ul>
-            <Link className="carrito" to={"/cart"}>
-                <Cart>
-                    <CartWidget />
-                </Cart>0
-            </Link>
+            <div className="carrito" to={"/cart"}>
+                <Cart />
+            </div>
         </nav>
 
     )

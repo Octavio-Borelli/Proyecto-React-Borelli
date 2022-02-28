@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartProveedor';
 
 
-const ItemCount = ({ inicial, stock, onAdd }) => {
 
+const ItemCount = ({ inicial, stock, objeto }) => {
+
+    const { addItem, isInCart } = useContext(CartContext);
     const [contador, setContador] = useState(inicial);
-    const [ocultar, setOcultar] = useState(true);
-    const [mostrar, setMostrar] = useState(false);
+
 
     function sumar() {
         if (contador < stock) {
             setContador(contador + 1);
         };
-    }
+    };
 
     function restar() {
         if (contador > 1) {
@@ -20,35 +22,25 @@ const ItemCount = ({ inicial, stock, onAdd }) => {
         }
     };
 
-    function onAdd() {
-        console.log(contador)
-    };
-
-    function ocultarBoton() {
-        setOcultar(false)
-    };
-
-
-    function mostrarBoton() {
-        setMostrar(true)
-    };
-
-
-
     return (
         <>
-            <div>
-                {ocultar ? <div className="contador">
+
+            {!isInCart(objeto.id) && <div className="contador">
+                <div>
                     <button className="restar" onClick={() => restar()}>-</button>
                     <h1>{contador}</h1>
                     <button className="restar" onClick={() => sumar()}>+</button>
-                    <button className="comprar" onClick={() => { ocultarBoton(false); mostrarBoton(true) }}>Comprar</button>
-                </div> : null}
-                <div className="contador">
-                    {mostrar ? <Link className="finalizar" to={"/cart"} onClick={() => onAdd(contador)}>Finalizar compra</Link> : null}
                 </div>
+                <div>
+                    <button className="comprar" onClick={() => addItem(objeto, contador)}>Agregar al carrito</button>
+                </div>
+
+            </div>}
+            {isInCart(objeto.id) && <div className="contador">
+                <Link className="finalizar" to={"/cart"} >Finalizar compra</Link>
             </div>
 
+            }
         </>
     );
 };
