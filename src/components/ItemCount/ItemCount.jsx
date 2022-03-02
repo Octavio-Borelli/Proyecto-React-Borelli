@@ -4,9 +4,10 @@ import { CartContext } from '../../context/CartProveedor';
 
 
 
+
 const ItemCount = ({ inicial, stock, objeto }) => {
 
-    const { addItem, isInCart } = useContext(CartContext);
+    const { addItem, isInCart, agregarAlCarrito, } = useContext(CartContext);
     const [contador, setContador] = useState(inicial);
 
 
@@ -21,6 +22,9 @@ const ItemCount = ({ inicial, stock, objeto }) => {
             setContador(contador - 1);
         }
     };
+
+
+
 
     return (
         <>
@@ -39,10 +43,10 @@ const ItemCount = ({ inicial, stock, objeto }) => {
             {isInCart(objeto.id) && <div className="contador">
                 <Link className="finalizar" to={"/cart"} >Finalizar compra</Link>
             </div>
-
             }
-        </>
-    );
+
+
+        </>)
 };
 
 export default ItemCount;

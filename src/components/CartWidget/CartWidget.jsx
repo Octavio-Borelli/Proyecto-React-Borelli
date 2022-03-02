@@ -5,11 +5,13 @@ import LogoWidget from '../LogoWidget/LogoWidget';
 
 function CartWidget() {
 
-    const { agregarAlCarrito } = useContext(CartContext)
+    const { agregarAlCarrito, totalItems } = useContext(CartContext)
 
-    return (<Link to={"/cart"}>
-        <LogoWidget />{agregarAlCarrito.length}
-    </Link>
+    return (<>
+        <Link to={"/cart"}>
+            <LogoWidget />{totalItems(agregarAlCarrito)}
+        </Link>
+    </>
     );
 
 

@@ -3,13 +3,6 @@ import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ objeto }) => {
 
-    // function onAdd() {
-    // };
-
-    // function handleClick() {
-    //     setOcultar(false);
-    // }
-
     return (
 
         <div className="contenedorObjetoDetalle">
@@ -28,7 +21,6 @@ const ItemDetail = ({ objeto }) => {
             </div>
             <div className="contadorContenedor">
                 <ItemCount objeto={objeto} inicial={1} stock={objeto.stock} />
-                {/* <ItemCount inicial={1} stock={objeto.stock} onAdd={onAdd} handleClick={handleClick} /> */}
             </div>
         </div>
     )

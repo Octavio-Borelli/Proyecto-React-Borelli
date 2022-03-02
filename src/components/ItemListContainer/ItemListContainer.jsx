@@ -19,6 +19,9 @@ function ItemListContainer() {
 
     const [itemsMueble, setItemsMueble] = useState();
 
+    const { id } = useParams();
+
+
     useEffect(() => {
 
         const promesa = new Promise((resolve, reject) => {

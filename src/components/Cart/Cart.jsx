@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import CartWidget from '../CartWidget/CartWidget'
 import { CartContext } from '../../context/CartProveedor'
 import { Link } from 'react-router-dom';
 import ArtAgregadosCart from '../ArtAgregadosCart/ArtAgregadosCart';
@@ -7,14 +6,11 @@ import ArtAgregadosCart from '../ArtAgregadosCart/ArtAgregadosCart';
 
 const Cart = () => {
 
-    const { agregarAlCarrito, vaciarCarrito } = useContext(CartContext)
+    const { agregarAlCarrito, vaciarCarrito, sumaTotalCarrito } = useContext(CartContext)
+
 
     return (
         <>
-            <div>
-                <CartWidget />
-            </div>
-
             {agregarAlCarrito.length === 0 ?
                 <div>
                     <h3>carrito vacio</h3>
@@ -22,18 +18,25 @@ const Cart = () => {
                 </div>
                 :
                 <div>
-
                     <div className='agregadosCart'>
-                        <ArtAgregadosCart itemsSeleccionados={agregarAlCarrito} />
+                        <ArtAgregadosCart />
                     </div>
 
                     <div>
                         <button className='btnItem' onClick={vaciarCarrito}>Vaciar carrito</button>
                     </div>
+                    <h2>Total: $ {sumaTotalCarrito(agregarAlCarrito)}</h2>
+
                 </div>
+
             }
+
         </>
+
     )
+
 }
 
 export default Cart
+
+

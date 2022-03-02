@@ -1,9 +1,6 @@
 import React from 'react';
-import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
-import Checkout from '../Checkout/Checkout';
-
 
 
 function Navbar() {
@@ -33,7 +30,7 @@ function Navbar() {
                 </li>
             </ul>
             <div className="carrito" to={"/cart"}>
-                <Cart />
+                <CartWidget />
             </div>
         </nav>
 

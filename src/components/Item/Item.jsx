@@ -14,12 +14,8 @@ const Item = ({ item }) => {
                 <h4 className="precioItem">{item.precio}</h4>
                 <Link className="btnItem" to={`/item/${item.id}`}>Detalles del producto</Link>
             </div>
-
         </div >
-
-
     )
-
 };
 
 export default Item
