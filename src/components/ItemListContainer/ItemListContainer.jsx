@@ -19,7 +19,12 @@ function ItemListContainer() {
 
     const [itemsMueble, setItemsMueble] = useState();
 
-    const { id } = useParams();
+
+    // const { nombre } = useParams();
+
+    // const remover = muebles.filter((objeto) => objeto.nombre !== nombre)
+    // setItemsFiltro(remover)
+
 
 
     useEffect(() => {

@@ -38,7 +38,6 @@ const CartProveedor = ({ children }) => {
     }
 
 
-
     return (
         <CartContext.Provider value={{ agregarAlCarrito, addItem, removeItem, isInCart, vaciarCarrito, sumaTotalCarrito, totalItems }}>
             {children}

@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
+import { CartContext } from '../../context/CartProveedor';
+
 
 
 function Navbar() {
+
+    const { agregarAlCarrito } = useContext(CartContext)
+
+
     return (
 
         <nav className="contenedorNav">
@@ -17,25 +23,35 @@ function Navbar() {
                     <Link className="navLink" to={"/nosotros"}>Nosotros</Link>
                 </li>
                 <li className="itemNav">
-                    <Link className="navLink" to={"category/sillones"}>Sillones</Link>
+                    <Link className="navLink" to={"/category/sillones"}>Sillones</Link>
                 </li>
                 <li className="itemNav">
-                    <Link className="navLink" to={"category/sillas"}>Sillas</Link>
+                    <Link className="navLink" to={"/category/sillas"}>Sillas</Link>
                 </li>
                 <li className="itemNav">
-                    <Link className="navLink" to={"category/camas"}>Camas</Link>
+                    <Link className="navLink" to={"/category/camas"}>Camas</Link>
                 </li>
                 <li className="itemNav">
                     <Link className="navLink" to={"/contacto"}>Contacto</Link>
                 </li>
             </ul>
-            <div className="carrito" to={"/cart"}>
-                <CartWidget />
-            </div>
-        </nav>
 
+            <>
+                {agregarAlCarrito.length != 0 ?
+                    < div className="carrito" to={"/cart"}>
+                        <CartWidget />
+                    </div> : null}
+            </>
+        </nav >
     )
         ;
 }
 
 export default Navbar;
+
+
+        // <>
+        //     {isInCart(objeto.id) ? <Link to={"/cart"}>
+        //         <LogoWidget />{totalItems(agregarAlCarrito)}
+        //     </Link> : null}
+        // </>
