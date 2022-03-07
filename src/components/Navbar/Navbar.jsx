@@ -49,9 +49,3 @@ function Navbar() {
 
 export default Navbar;
 
-
-        // <>
-        //     {isInCart(objeto.id) ? <Link to={"/cart"}>
-        //         <LogoWidget />{totalItems(agregarAlCarrito)}
-        //     </Link> : null}
-        // </>

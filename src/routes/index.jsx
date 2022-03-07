@@ -15,7 +15,7 @@ const Rutas = () => {
             <Navbar className="seccionNavBar" />
             <Routes>
                 <Route path="/" element={<div className="seccionCincoItems"><ItemListContainer /></div>} />
-                <Route path="/category/:id" element={<div className="seccionCincoItems"><ItemListContainer /></div>} />
+                <Route path="/category/:categoryId" element={<div className="seccionCincoItems"><ItemListContainer /></div>} />
                 <Route path="/item/:id" element={<ItemDetailContainer className="seccionDetalleItem" />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/cart/checkout" element={<Checkout />} />

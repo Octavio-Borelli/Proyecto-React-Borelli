@@ -201,3 +201,107 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer
+
+--------------------------------------------------------------------------------------------
+
+    function ItemListContainer() {
+
+
+        // useEffect(() => {
+
+        //     const promesa = new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve(muebles)
+
+
+        //         }, 2000);
+        //     });
+
+
+        //     promesa.then((resultado) => {
+        //         setItemsMueble(resultado);
+
+        //     }).catch((err) => { console.log(err) });
+
+        // }, []);
+
+
+
+        // const getData = async () => {
+
+        //     try {
+        //         const data = collection(db, "muebles");
+        //         const col = await getDocs(data);
+        //         const result = col.docs.map((doc) => (doc = { id: doc.id, ...doc.data() })
+        //         );
+        //         setItemsMueble(result);
+
+        //     } catch (error) {
+        //         console.log(error);
+
+        //     }
+
+        // };
+
+        const { categoryId } = useParams();
+        const { itemsMueble, getData } = useFireStore();
+
+        console.log(categoryId)
+
+        useEffect(() => {
+            getData({ categoryId });
+        }, []);
+
+        return (
+            <>
+                <ItemList itemsMueble={itemsMueble} />
+            </>
+        );
+    };
+
+export default ItemListContainer;
+
+--------------------------------------------------------------------------------
+
+
+const ItemDetailContainer = () => {
+
+
+    // const [objeto, setObjeto] = useState();
+
+    const { id } = useParams();
+
+    const { muebleIndividual, getMuebleIndividualF } = useFireStore()
+
+    useEffect(() => {
+        getMuebleIndividualF({ id })
+    }, [muebleIndividual])
+
+
+    // const getItem = () => {
+    //     const mueble = muebles.find((mueble) => mueble.id === id)
+    //     setObjeto(mueble)
+
+    // }
+
+    // useEffect(() => {
+
+    //     const promesaDetail = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             getItem()
+    //             if (objeto) { resolve(objeto) }
+    //         }, 2000)
+    //     });
+
+    //     promesaDetail.then(console.log)
+    //         .catch(console.warn);
+    // }, []);
+
+    return (
+        <>
+            {<ItemDetail objeto={muebleIndividual} />}
+        </>
+    );
+};
+
+export default ItemDetailContainer
