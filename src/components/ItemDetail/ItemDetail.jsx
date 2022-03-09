@@ -13,9 +13,7 @@ const ItemDetail = ({ objeto }) => {
                 <img src={objeto.img} className="imagenObjeto" alt="" />
             </div>
             <div className="derecha">
-                <h4 className="idObjeto">{objeto.id}</h4>
-                <h4 className="precioObjeto">{objeto.precio}</h4>
-                <h4 className="stockObjeto">{objeto.stock}</h4>
+                <h4 className="precioObjeto">$ {objeto.precio}</h4>
                 <h4 className="descripcionObjeto">{objeto.descripcion}</h4>
             </div>
             <div className="contadorContenedor">

@@ -1,14 +1,13 @@
-import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, getDoc, addDoc, updateDoc } from 'firebase/firestore';
 import db from '../firebase/firebase';
 import { useState } from 'react';
-
 
 const useFireStore = () => {
 
     const [itemsMueble, setItemsMueble] = useState([]);
     const [muebleIndividual, setMuebleIndividual] = useState({});
 
-    const getData = async ({ categoryId }) => {
+    const getData = async () => {
 
         try {
             const data = collection(db, "muebles");
@@ -16,19 +15,13 @@ const useFireStore = () => {
             const result = col.docs.map(
                 (doc) => (doc = { id: doc.id, ...doc.data() })
             );
-            if (categoryId) {
-                const categoriaProductoNav = result.filter(
-                    (producto) => producto.categoryId === categoryId
-                );
-                setItemsMueble(categoriaProductoNav);
-            } else {
-                setItemsMueble(result);
-            }
+            setItemsMueble(result);
 
         } catch (error) {
             console.log(error);
         }
     };
+
 
     const getMuebleIndividual = async ({ id }) => {
 
@@ -44,11 +37,24 @@ const useFireStore = () => {
         }
     };
 
+    const emitirTicket = async ({ datos }) => {
+        try {
+            const col = collection(db, "orders");
+            const ticket = await addDoc(col, datos);
+            alert(ticket.id);
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
     return {
         getData,
         itemsMueble,
         muebleIndividual,
-        getMuebleIndividual
+        getMuebleIndividual,
+        emitirTicket,
     }
 }
 

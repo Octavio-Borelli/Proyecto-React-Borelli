@@ -25,11 +25,15 @@ const CartProveedor = ({ children }) => {
         return agregarAlCarrito.some((objeto) => objeto.id === id)
     };
 
-    const sumaTotalCarrito = () => {
-        let total = 0;
-        agregarAlCarrito.map(({ precio, cantidad }) => total = total += precio * cantidad)
-        return total;
-    }
+
+    let sumaTotalCarrito = agregarAlCarrito.map((ttl) => ttl.precio * ttl.cantidad).reduce((accumulator, curr) => accumulator + curr, 0);
+
+
+    // const sumaTotalCarrito = () => {
+    //     let total = 0;
+    //     agregarAlCarrito.map(({ precio, cantidad }) => total = total += precio * cantidad)
+    //     return total;
+    // }
 
     const totalItems = () => {
         let totales = 0;
