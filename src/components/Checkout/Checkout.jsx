@@ -1,6 +1,7 @@
 import React from 'react';
 import useFireStore from '../../hooks/useFireStore';
 import { useState } from 'react';
+import FormCheckOut from '../FormCheckOut/FormCheckOut';
 
 const Checkout = ({ agregarAlCarrito, sumaTotalCarrito }) => {
 
@@ -14,12 +15,11 @@ const Checkout = ({ agregarAlCarrito, sumaTotalCarrito }) => {
         },
         items: agregarAlCarrito,
         total: sumaTotalCarrito,
-    })
+    });
 
     const { emitirTicket } = useFireStore()
 
     const handleChange = (e) => {
-
         setForm({
             ...form,
             buyer: {
@@ -35,30 +35,9 @@ const Checkout = ({ agregarAlCarrito, sumaTotalCarrito }) => {
     };
 
     return (
-
-
-        <form onSubmit={handleSubmit} >
-            <div>
-                <label>Nombre</label>
-                <input onChange={handleChange} name="nombre" value={form.buyer.nombre} type="text" />
-            </div>
-            <div>
-                <label>Apellido</label>
-                <input onChange={handleChange} name="apellido" value={form.buyer.apellido} type="mail" />
-            </div>
-            <div>
-                <label>Teléfono</label>
-                <input onChange={handleChange} name="teléfono" value={form.buyer.teléfono} type="number" />
-            </div>
-            <div>
-                <label>Email</label>
-                <input onChange={handleChange} name="email" value={form.buyer.email} type="email" />
-            </div>
-            <div >
-                <button disabled={!form.buyer.nombre || !form.buyer.apellido || !form.buyer.teléfono || !form.buyer.email} type='submit' value="Comprar">Comprar</button>
-            </div>
-        </form >
-
+        <>
+            <FormCheckOut handleSubmit={handleSubmit} handleChange={handleChange} form={form} />
+        </>
     )
 }
 

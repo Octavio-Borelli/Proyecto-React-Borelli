@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import useFireStore from '../../hooks/useFireStore';
 import { useParams } from 'react-router-dom';
 
-
-function ItemListContainer() {
+const ItemListContainer = () => {
 
     const { categoryId } = useParams();
     const { itemsMueble, getData } = useFireStore()
 
     useEffect(() => {
-        getData()
+        getData({ categoryId })
     }, [])
 
     return (

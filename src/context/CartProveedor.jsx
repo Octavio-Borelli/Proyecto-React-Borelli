@@ -1,11 +1,10 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, createContext } from "react";
 
 export const CartContext = createContext();
 
 const CartProveedor = ({ children }) => {
 
     const [agregarAlCarrito, setAgregarAlCarrito] = useState([]);
-
 
     const addItem = (objeto, cantidad) => {
         let cantItem = { ...objeto, cantidad }
@@ -25,13 +24,13 @@ const CartProveedor = ({ children }) => {
         return agregarAlCarrito.some((objeto) => objeto.id === id)
     };
 
-
     let sumaTotalCarrito = agregarAlCarrito.map((ttl) => ttl.precio * ttl.cantidad).reduce((accumulator, curr) => accumulator + curr, 0);
 
 
     // const sumaTotalCarrito = () => {
     //     let total = 0;
-    //     agregarAlCarrito.map(({ precio, cantidad }) => total = total += precio * cantidad)
+    //     agregarAlCarrito.map(({ precio, cantidad }) => total = total += precio * cantidad);
+    //     setCantItems(total)
     //     return total;
     // }
 

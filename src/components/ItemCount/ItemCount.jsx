@@ -2,14 +2,10 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartProveedor';
 
-
-
-
 const ItemCount = ({ inicial, stock, objeto }) => {
 
     const { addItem, isInCart } = useContext(CartContext);
     const [contador, setContador] = useState(inicial);
-
 
     function sumar() {
         if (contador < stock) {
@@ -23,10 +19,8 @@ const ItemCount = ({ inicial, stock, objeto }) => {
         }
     };
 
-
     return (
         <>
-
             {!isInCart(objeto.id) && <div className="contador">
                 <div>
                     <button className="restar" onClick={() => restar()}>-</button>
@@ -36,14 +30,11 @@ const ItemCount = ({ inicial, stock, objeto }) => {
                 <div>
                     <button className="comprar" onClick={() => addItem(objeto, contador)}>Agregar al carrito</button>
                 </div>
-
             </div>}
             {isInCart(objeto.id) && <div className="contador">
                 <Link className="finalizar" to={"/cart"} >Finalizar compra</Link>
             </div>
             }
-
-
         </>)
 };
 
