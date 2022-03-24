@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import ModalCheckOut from '../ModalCheckOut/ModalCheckOut'
 
-const BotonCheckOut = ({ form }) => {
+const BotonCheckOut = ({ formulario, compraId }) => {
 
     const [visible, setVisible] = useState(false)
 
     const handleToggle = () => {
-        setVisible(!visible)
+        setVisible(!visible);
     }
 
     return (
         <div >
-            {visible ? <ModalCheckOut handleToggle={handleToggle} /> : null}
-            <button onClick={() => { handleToggle(true) }} disabled={!form.buyer.nombre || !form.buyer.apellido || !form.buyer.teléfono || !form.buyer.email} type='submit' value="Comprar">Comprar</button>
+            {visible ? <ModalCheckOut handleToggle={handleToggle} compraId={compraId} /> : null}
+            <button className='botonCheckOut' onClick={() => { handleToggle(true) }} disabled={!formulario.buyer.nombre || !formulario.buyer.apellido || !formulario.buyer.teléfono || !formulario.buyer.email} type='submit' value="Comprar">Comprar</button>
         </div>
     )
 }

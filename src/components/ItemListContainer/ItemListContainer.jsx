@@ -13,11 +13,9 @@ const ItemListContainer = () => {
     }, [])
 
     return (
-        <>
-
-            {/* {<ItemList itemsMueble={itemsMueble} />} */}
-            {<ItemList itemsMueble={categoryId === undefined ? itemsMueble : itemsMueble.filter((f) => f.categoryId === categoryId)} />}
-        </>
+        <div className="seccionItems">
+            {<ItemList itemsMueble={categoryId === undefined ? itemsMueble : itemsMueble.filter((filtro) => filtro.categoryId === categoryId)} />}
+        </div>
     );
 };
 

@@ -6,7 +6,7 @@ const Item = ({ item }) => {
     return (
 
         <div className="contenedoresIndividualesItem">
-            <img src={item.img} className="imagenes" alt="" />
+            <img src={item.img} className="imagenes" alt="imagen" />
             <div className="contenedoresIndividualesItem2">
                 <h4 className="nombreItem">{item.nombre}</h4>
                 <h4 className="precioItem">$ {item.precio}</h4>
@@ -14,7 +14,7 @@ const Item = ({ item }) => {
                 <h4 className="stockItem">Stock:{item.stock}</h4>
                 <Link className="btnItem" to={`/item/${item.id}`}>Detalles del producto</Link>
             </div>
-        </div >
+        </div>
     )
 };
 

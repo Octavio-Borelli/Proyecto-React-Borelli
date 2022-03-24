@@ -10,11 +10,10 @@ const ItemDetail = ({ objeto }) => {
                 <h4 className="nombreObjeto">{objeto.nombre}</h4>
             </div>
             <div className="izquierda">
-                <img src={objeto.img} className="imagenObjeto" alt="" />
+                <img src={objeto.img} className="imagenObjeto" alt="imagen" />
             </div>
             <div className="derecha">
-                <h4 className="precioObjeto">$ {objeto.precio}</h4>
-                <h4 className="descripcionObjeto">{objeto.descripcion}</h4>
+                <h4 className="precioObjeto">Precio $ {objeto.precio}</h4>
             </div>
             <div className="contadorContenedor">
                 <ItemCount objeto={objeto} inicial={1} stock={objeto.stock} />

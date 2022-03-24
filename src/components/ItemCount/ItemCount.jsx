@@ -22,7 +22,7 @@ const ItemCount = ({ inicial, stock, objeto }) => {
     return (
         <>
             {!isInCart(objeto.id) && <div className="contador">
-                <div>
+                <div className='signos'>
                     <button className="restar" onClick={() => restar()}>-</button>
                     <h1>{contador}</h1>
                     <button className="restar" onClick={() => sumar()}>+</button>

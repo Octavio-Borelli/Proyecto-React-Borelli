@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartProveedor'
 
+
 const ArtAgregadosCart = ({ objeto }) => {
 
     const { removeItem } = useContext(CartContext)
 
     return (
 
-        <div >
-            <img className="imagenObjeto" src={objeto.img} alt="" />
+        <div className='contenedorDetalleItem'>
+            <img className="imagenObjeto" src={objeto.img} alt="imagen" />
             <h3>Nombre: {objeto.nombre}</h3>
             <h3>Precio: $ {objeto.precio}</h3>
             <h3>Cantidad: {objeto.cantidad}</h3>

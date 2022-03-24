@@ -7,33 +7,9 @@ const useFireStore = () => {
     const [itemsMueble, setItemsMueble] = useState([]);
     const [muebleIndividual, setMuebleIndividual] = useState({});
     const [stockActualizado, setStockActualizado] = useState([]);
-    const [compraId, setCompraId] = useState([]);
-
-    // const getData = async ({ categoryId }) => {
-
-    //     try {
-    //         const data = collection(db, "muebles");
-    //         const col = await getDocs(data);
-    //         const result = col.docs.map(
-    //             (doc) => (doc = { id: doc.id, ...doc.data() })
-    //         );
-    //         if (categoryId === undefined) {
-    //             setItemsMueble(result)
-    //         } else {
-    //             const categoriasNav = result.filter(
-    //                 (filtro) => filtro.categoryId === categoryId
-    //             );
-    //             setItemsMueble(categoriasNav);
-    //         }
-
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
-
+    const [compraId, setCompraId] = useState(null);
 
     const getData = async () => {
-
         try {
             const data = collection(db, "muebles");
             const col = await getDocs(data);
@@ -60,10 +36,9 @@ const useFireStore = () => {
 
     const emitirTicket = async ({ datos }) => {
         try {
-            const col = collection(db, "orders");
+            const col = collection(db, "ordenes");
             const ticket = await addDoc(col, datos);
-            console.log(ticket.id)
-            setCompraId(ticket.id)
+            setCompraId(ticket.id);
 
             datos.items.map((e) => actualizarStock(e.id, e.stock, e.cantidad))
         } catch (error) {
@@ -73,7 +48,6 @@ const useFireStore = () => {
 
     const actualizarStock = async (id, stock, cantidad) => {
         const compraConfirmada = (doc(db, "muebles", id))
-
         try {
             await updateDoc(compraConfirmada, { stock: stock - cantidad })
             setStockActualizado(compraConfirmada)
@@ -91,7 +65,6 @@ const useFireStore = () => {
         actualizarStock,
         stockActualizado,
         compraId,
-
     }
 }
 

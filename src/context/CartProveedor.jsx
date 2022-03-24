@@ -24,15 +24,11 @@ const CartProveedor = ({ children }) => {
         return agregarAlCarrito.some((objeto) => objeto.id === id)
     };
 
-    let sumaTotalCarrito = agregarAlCarrito.map((ttl) => ttl.precio * ttl.cantidad).reduce((accumulator, curr) => accumulator + curr, 0);
-
-
-    // const sumaTotalCarrito = () => {
-    //     let total = 0;
-    //     agregarAlCarrito.map(({ precio, cantidad }) => total = total += precio * cantidad);
-    //     setCantItems(total)
-    //     return total;
-    // }
+    const sumaTotalCarrito = () => {
+        let total = 0;
+        agregarAlCarrito.map(({ precio, cantidad }) => total = total += precio * cantidad);
+        return total;
+    }
 
     const totalItems = () => {
         let totales = 0;
@@ -40,9 +36,16 @@ const CartProveedor = ({ children }) => {
         return totales;
     }
 
-
     return (
-        <CartContext.Provider value={{ agregarAlCarrito, addItem, removeItem, isInCart, vaciarCarrito, sumaTotalCarrito, totalItems }}>
+        <CartContext.Provider value={{
+            agregarAlCarrito,
+            addItem,
+            removeItem,
+            isInCart,
+            vaciarCarrito,
+            sumaTotalCarrito,
+            totalItems
+        }}>
             {children}
         </CartContext.Provider >
     )

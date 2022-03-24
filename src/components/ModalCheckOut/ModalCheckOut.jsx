@@ -1,16 +1,20 @@
-import React from 'react'
-import useFireStore from '../../hooks/useFireStore'
+import React, { useContext } from 'react';
+import { CartContext } from '../../context/CartProveedor';
+import LogoTilde from '../LogoTilde/LogoTilde';
 
-const ModalCheckOut = ({ handleToggle }) => {
+const ModalCheckOut = ({ handleToggle, compraId }) => {
 
-    const { compraId } = useFireStore()
+    const { vaciarCarrito } = useContext(CartContext);
 
     return (
         <div className='contenedorModal'>
             <div className='contenidoModal'>
-                <h3>Compra exitosa</h3>
-                <h3>Id de la compra: {compraId}</h3>
-                <button onClick={() => { handleToggle(false) }}>Cerrar</button>
+                <LogoTilde />
+                <h1>Compra exitosa</h1>
+                <h2 className='h2ContenidoModal' >Id de la compra: {compraId}</h2>
+                <div className="contenedorBotonModal">
+                    <button className='btnItem' onClick={() => { handleToggle(false); vaciarCarrito(); }}>Cerrar</button>
+                </div>
             </div>
         </div >
     )

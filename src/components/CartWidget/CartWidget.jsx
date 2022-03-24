@@ -8,13 +8,11 @@ function CartWidget() {
     const { agregarAlCarrito, totalItems } = useContext(CartContext)
 
     return (
-
         <>
-            <Link to={"/cart"}>
+            <Link className="interiorCarrito" to={"/cart"}>
                 <LogoWidget />{totalItems(agregarAlCarrito)}
             </Link>
         </>
-
     );
 }
 

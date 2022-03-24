@@ -1,11 +1,13 @@
-import React from 'react';
 import useFireStore from '../../hooks/useFireStore';
-import { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import FormCheckOut from '../FormCheckOut/FormCheckOut';
+import { CartContext } from '../../context/CartProveedor'
 
-const Checkout = ({ agregarAlCarrito, sumaTotalCarrito }) => {
+const Checkout = () => {
 
-    const [form, setForm] = useState({
+    const { agregarAlCarrito, sumaTotalCarrito } = useContext(CartContext)
+
+    const [formulario, setFormulario] = useState({
 
         buyer: {
             nombre: "",
@@ -14,29 +16,48 @@ const Checkout = ({ agregarAlCarrito, sumaTotalCarrito }) => {
             email: "",
         },
         items: agregarAlCarrito,
-        total: sumaTotalCarrito,
+        total: sumaTotalCarrito(),
     });
 
-    const { emitirTicket } = useFireStore()
+    const { emitirTicket, compraId } = useFireStore()
 
     const handleChange = (e) => {
-        setForm({
-            ...form,
+        const { name, value } = e.target;
+        setFormulario({
+            ...formulario,
             buyer: {
-                ...form.buyer,
-                [e.target.name]: e.target.value
+                ...formulario.buyer,
+                [name]: value
             }
         })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        emitirTicket({ datos: form })
+        emitirTicket({ datos: formulario });
+    };
+
+    const [validar, setValidar] = useState({});
+
+    const handleBlur = (e) => {
+        const { name, value } = e.target;
+        if (value === "") {
+            setValidar({ ...validar, [name]: "*campo requerido" });
+            return;
+        }
+        setValidar({})
     };
 
     return (
         <>
-            <FormCheckOut handleSubmit={handleSubmit} handleChange={handleChange} form={form} />
+            <FormCheckOut
+                handleSubmit={handleSubmit}
+                handleChange={handleChange}
+                formulario={formulario}
+                compraId={compraId}
+                handleBlur={handleBlur}
+                validar={validar}
+            />
         </>
     )
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Nosotros = () => {
     return (
@@ -18,7 +17,6 @@ const Nosotros = () => {
             Aplicamos rigurosas estándares y procesos de calidad para asegurar un
             óptimo trabajo de los materiales para el mejor resultado del proyecto.
         </p>
-
     )
 }
 

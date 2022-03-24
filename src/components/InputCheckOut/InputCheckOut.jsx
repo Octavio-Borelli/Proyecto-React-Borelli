@@ -1,23 +1,33 @@
-import React from 'react'
+import React from 'react';
 
-const InputCheckOut = ({ handleChange, form }) => {
+const InputCheckOut = ({
+    handleChange,
+    formulario,
+    handleBlur,
+    validar
+}) => {
+
     return (
-        <div>
+        <div className='contenedorInputs'>
             <div>
-                <label>Nombre</label>
-                <input onChange={handleChange} name="nombre" value={form.buyer.nombre} type="text" />
+                <label className='etiquetaFormulario'>Nombre</label>
+                <input className='inputFormulario' onChange={handleChange} onBlur={handleBlur} name="nombre" value={formulario.buyer.nombre} type="text" />
+                {validar.nombre && (<small className='small'>{validar.nombre}</small>)}
             </div>
             <div>
-                <label>Apellido</label>
-                <input onChange={handleChange} name="apellido" value={form.buyer.apellido} type="mail" />
+                <label className='etiquetaFormulario'>Apellido</label>
+                <input className='inputFormulario' onChange={handleChange} onBlur={handleBlur} name="apellido" value={formulario.buyer.apellido} type="mail" />
+                {validar.apellido && (<small className='small'>{validar.apellido}</small>)}
             </div>
             <div>
-                <label>Teléfono</label>
-                <input onChange={handleChange} name="teléfono" value={form.buyer.teléfono} type="number" />
+                <label className='etiquetaFormulario'>Teléfono</label>
+                <input className='inputFormulario' onChange={handleChange} onBlur={handleBlur} name="teléfono" value={formulario.buyer.teléfono} type="number" />
+                {validar.teléfono && (<small className='small'>{validar.teléfono}</small>)}
             </div>
             <div>
-                <label>Email</label>
-                <input onChange={handleChange} name="email" value={form.buyer.email} type="email" />
+                <label className='etiquetaFormulario'>Email</label>
+                <input className='inputFormulario' onChange={handleChange} onBlur={handleBlur} name="email" value={formulario.buyer.email} type="email" />
+                {validar.email && (<small className='small'>{validar.email}</small>)}
             </div>
         </div>
     )

@@ -1,27 +1,22 @@
 import React from 'react'
 
-
 const Contacto = () => {
     return (
-        <div>
-            <div className="fondoFormulario">
-                <form className="formulario-contacto" action="" method="post" enctype="application/x-www-form-urlencoded">
-                    Nombre<input type="text" />
 
-                    Apellido<input type="text" />
-
-                    Email<input type="email" />
-
-                    <div className="botonesFormularioUbicacion">
-                        <button className="botFormulario" value="Enviar">
-                            Enviar
-                        </button>
-                        <button className="botFormulario" type="reset" value="Borrar">
-                            Borrar
-                        </button>
-                    </div>
-                </form>
-            </div>
+        <div className="fondoFormulario">
+            <form className="formularioContacto">
+                Nombre<input type="text" />
+                Apellido<input type="text" />
+                Email<input type="email" />
+                <div className="botonesFormularioUbicacion">
+                    <button disabled className="botFormulario" value="Enviar">
+                        Enviar
+                    </button>
+                    <button disabled className="botFormulario" value="Borrar">
+                        Borrar
+                    </button>
+                </div>
+            </form>
         </div>
     )
 };
