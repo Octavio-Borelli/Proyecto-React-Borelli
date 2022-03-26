@@ -28,5 +28,5 @@ const FormCheckOut = ({
     )
 }
 
-export default FormCheckOut
+export default FormCheckOut;
 

@@ -6,4 +6,4 @@ const LogoTilde = () => {
     )
 }
 
-export default LogoTilde
+export default LogoTilde; 

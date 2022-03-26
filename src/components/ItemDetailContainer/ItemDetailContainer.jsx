@@ -3,8 +3,6 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 import useFireStore from '../../hooks/useFireStore';
 
-
-
 const ItemDetailContainer = () => {
 
     const { id } = useParams();
@@ -12,7 +10,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         getMuebleIndividual({ id })
-    }, [])
+    }, [getMuebleIndividual, id])
 
     return (
         <>
@@ -21,4 +19,4 @@ const ItemDetailContainer = () => {
     );
 };
 
-export default ItemDetailContainer
+export default ItemDetailContainer;    

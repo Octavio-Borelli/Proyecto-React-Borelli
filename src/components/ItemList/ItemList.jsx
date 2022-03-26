@@ -10,4 +10,4 @@ const ItemList = ({ itemsMueble }) => {
         </>)
 
 };
-export default ItemList
+export default ItemList; 

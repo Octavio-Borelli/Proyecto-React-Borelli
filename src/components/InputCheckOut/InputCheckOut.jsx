@@ -33,4 +33,5 @@ const InputCheckOut = ({
     )
 }
 
-export default InputCheckOut
+export default InputCheckOut;
+

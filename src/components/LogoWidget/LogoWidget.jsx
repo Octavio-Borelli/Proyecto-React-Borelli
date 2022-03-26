@@ -6,4 +6,4 @@ const LogoWidget = () => {
     )
 }
 
-export default LogoWidget
+export default LogoWidget; 

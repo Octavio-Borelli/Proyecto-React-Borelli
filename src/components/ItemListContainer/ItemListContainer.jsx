@@ -9,8 +9,8 @@ const ItemListContainer = () => {
     const { itemsMueble, getData } = useFireStore()
 
     useEffect(() => {
-        getData({ categoryId })
-    }, [])
+        getData(categoryId)
+    }, [getData, categoryId])
 
     return (
         <div className="seccionItems">
@@ -19,4 +19,4 @@ const ItemListContainer = () => {
     );
 };
 
-export default ItemListContainer;
+export default ItemListContainer;    

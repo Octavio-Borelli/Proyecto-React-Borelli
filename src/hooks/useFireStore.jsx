@@ -1,6 +1,7 @@
 import { collection, getDocs, doc, getDoc, addDoc, updateDoc } from 'firebase/firestore';
 import db from '../firebase/firebase';
 import { useState } from 'react';
+import { useCallback } from 'react';
 
 const useFireStore = () => {
 
@@ -9,7 +10,7 @@ const useFireStore = () => {
     const [stockActualizado, setStockActualizado] = useState([]);
     const [compraId, setCompraId] = useState(null);
 
-    const getData = async () => {
+    const getData = useCallback(async () => {
         try {
             const data = collection(db, "muebles");
             const col = await getDocs(data);
@@ -21,9 +22,9 @@ const useFireStore = () => {
         } catch (error) {
             console.log(error);
         }
-    };
+    }, []);
 
-    const getMuebleIndividual = async ({ id }) => {
+    const getMuebleIndividual = useCallback(async ({ id }) => {
         try {
             const document = doc(db, "muebles", id);
             const response = await getDoc(document);
@@ -32,7 +33,7 @@ const useFireStore = () => {
         } catch (error) {
             console.log(error)
         }
-    };
+    }, []);
 
     const emitirTicket = async ({ datos }) => {
         try {
@@ -68,5 +69,5 @@ const useFireStore = () => {
     }
 }
 
-export default useFireStore
+export default useFireStore;
 

@@ -22,7 +22,7 @@ const ItemDetail = ({ objeto }) => {
     )
 };
 
-export default ItemDetail
+export default ItemDetail;
 
 
 

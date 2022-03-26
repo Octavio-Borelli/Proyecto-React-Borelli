@@ -21,5 +21,5 @@ const ArtAgregadosCart = ({ objeto }) => {
     )
 };
 
-export default ArtAgregadosCart
+export default ArtAgregadosCart;
 

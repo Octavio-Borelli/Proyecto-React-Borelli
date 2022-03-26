@@ -17,6 +17,6 @@ const BotonCheckOut = ({ formulario, compraId }) => {
     )
 }
 
-export default BotonCheckOut
+export default BotonCheckOut;
 
 
