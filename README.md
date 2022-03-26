@@ -96,10 +96,10 @@ De esta manera se desplegara dicha Terminal en la parte inferior del entorno de 
 ## Ubicación de los archivos del proyecto
 
 El proyecto esta dividido en varias carpetas para su fácil localización. Dentro de la carpeta SRC se encuentran otras cuatro, "components", "context", "firebase y "hooks". 
-*La primera contiene todos los componentes de React que corresponden a las diferentes secciones de la aplicación, ventanas modales, botones, etc, cada uno con su respectiva subcarpeta y su nombre para identificarlo.
-*La segunda contiene el componente React context llamado "CartProveedor" del cual todos los demás componentes son hijos y a los cuales se les pasan atributos directamente, sin necesidad de tener que pasar explícitamente una prop a través de cada nivel del árbol.  
-*La tercera contiene el código para la instalación del Firebase de Google, que es una base de datos donde se almacena toda la información de los productos de la tienda y al cual realizamos peticiones para que nos devuelva dicha información según sea necesario. 
-*La cuarta contiene los hooks propios de Firebase que nos permiten desde el VSCode, hacer las peticiones mencionadas anteriormente. 
+* La primera contiene todos los componentes de React que corresponden a las diferentes secciones de la aplicación, ventanas modales, botones, etc, cada uno con su respectiva subcarpeta y su nombre para identificarlo.
+* La segunda contiene el componente React context llamado "CartProveedor" del cual todos los demás componentes son hijos y a los cuales se les pasan atributos directamente, sin necesidad de tener que pasar explícitamente una prop a través de cada nivel del árbol.  
+* La tercera contiene el código para la instalación del Firebase de Google, que es una base de datos donde se almacena toda la información de los productos de la tienda y al cual realizamos peticiones para que nos devuelva dicha información según sea necesario. 
+* La cuarta contiene los hooks propios de Firebase que nos permiten desde el VSCode, hacer las peticiones mencionadas anteriormente. 
 
 ## Autor
 
